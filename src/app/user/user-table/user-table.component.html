@@ -1,0 +1,27 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Country</th>
+            <th>User Info</th>
+            <th>InIndia</th>
+            <th>Edit</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users;let i = index;">
+            <td>{{i+1}}</td>
+            <td><a routerLink="/users/view/{{i+1}}">{{user.fname}}</a></td>
+            <td>{{user.lname}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.country}}</td>
+            <td [innerHTML]="user.userInfo"></td>
+            <td>{{user.inIndia}}</td>
+            <td><a routerLink="/users/edit/{{i+1}}">Edit</a></td>
+        </tr>
+    </tbody>
+</table>
+<a routerLink="/users/add" class="btn btn-primary">Add User</a>

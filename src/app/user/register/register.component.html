@@ -1,0 +1,62 @@
+<div class="container">
+    <h2 class="text-center p-3">{{title}}</h2>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="fname">First Name</label>
+                    <input type="text" [formControlName]="'fname'" name="fname" id="fname" class="form-control" placeholder="First Name">
+                    <small id="helpId" class="text-muted">Help text</small>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="lname">Last Name</label>
+                    <input type="text" [formControlName]="'lname'" name="lname" id="lname" class="form-control" placeholder="Last Name">
+                    <small id="helpId" class="text-muted">Help text</small>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" [formControlName]="'email'" name="email" id="email" class="form-control" placeholder="Email">
+                    <small id="helpId" class="text-muted">Help text</small>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <input id="typeahead-basic" type="text" [formControlName]="'country'" class="form-control"  name="country" [ngbTypeahead]="search"/>
+                    <!-- <input type="text" [formControlName]="'country'" name="country" id="country" class="form-control" placeholder="First Name"> -->
+                    <small id="helpId" class="text-muted">Help text</small>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="userInfo">User Information</label>
+                    <div class="NgxEditor__Wrapper">
+                        <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
+                        <ngx-editor
+                          name="userInfo"
+                          [editor]="editor"
+                          [(ngModel)] = "userInfo"
+                          [formControlName]="'userInfo'"
+                          [placeholder]="'Type here...'"
+                        ></ngx-editor>
+                      </div>
+                    <!-- <ngx-text-editor [placeholder]="'Enter text here...'" [spellcheck]="true" [formControlName]="'userInfo'" [(ngModel)]="userInfo"></ngx-text-editor> -->
+                    <!-- <input type="text" [formControlName]="'userInfo'" name="userInfo" id="userInfo" class="form-control" placeholder="User Information"> -->
+                    <small id="helpId" class="text-muted">Help text</small>
+                </div>
+            </div>
+            <div class="form-check ml-3">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" [formControlName]="'inIndia'" name="inIndia" id="inIndia">
+                Are you in India?
+            </label>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-outline-primary p-2 mr-2">Save</button>
+        <button type="button" class="btn btn-outline-secondary p-2">view</button>
+    </form>
+</div>

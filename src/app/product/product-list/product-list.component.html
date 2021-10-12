@@ -1,0 +1,12 @@
+<div class="container">
+    <h3>Product List</h3>
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let product of products;let i = index;">
+            <div class="row">
+                <div class="col-sm-8"><h5>{{product.Product_Name}}</h5></div>
+                <div class="col-sm-4"><button class="btn btn-success p-2" (click)="onViewClick(product)">View</button></div>
+                <div class="col-sm-12 text-muted">Category: {{product.Product_Category}}</div>
+            </div>
+        </li>
+    </ul>
+</div>

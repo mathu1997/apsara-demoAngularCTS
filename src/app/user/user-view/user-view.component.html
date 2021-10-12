@@ -1,0 +1,18 @@
+<div class="container">
+    <h2 class="text-center">User Detail</h2>
+    <div class="d-flex justify-content-end">
+        <a routerLink="/users/edit/{{userId}}" class="btn btn-success">Edit</a>
+    </div>
+    <div class="row">
+        <div class="col-md-6"><h6 class="d-inline mr-3">First Name:</h6><span>{{user.fname}}</span></div>
+        <div class="col-md-6"><h6 class="d-inline mr-3">Last Name:</h6><span>{{user.lname}}</span></div>
+        <div class="col-md-6"><h6 class="d-inline mr-3">Email:</h6><span>{{user.email}}</span></div>
+        <div class="col-md-6"><h6 class="d-inline mr-3">Country:</h6><span>{{user.country}}</span></div>
+        <div class="col-md-12">
+            <h6 class="d-inline mr-3">User Information</h6>
+            <p [innerHTML]="user.userInfo"></p>
+        </div>
+        <div class="col-md-12">User is in India : {{user.inIndia?"Yes":"No"}}</div>
+    </div>
+</div>
+<app-product [UserId]="userId"></app-product>
